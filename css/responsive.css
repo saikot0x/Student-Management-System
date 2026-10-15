@@ -1,0 +1,518 @@
+/* ============================================
+   Responsive Design - Tablet (768px and up)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .navbar,
+    .main-content {
+        margin-left: 250px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .navbar-right {
+        gap: var(--spacing-lg);
+    }
+
+    .user-info {
+        display: none;
+    }
+}
+
+/* ============================================
+   Mobile (768px and below)
+   ============================================ */
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+    }
+
+    /* Hide sidebar by default */
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        box-shadow: var(--shadow-xl);
+    }
+
+    .sidebar.mobile-open {
+        left: 0;
+    }
+
+    /* Show menu toggle */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Adjust navbar and main content */
+    .navbar,
+    .main-content {
+        margin-left: 0;
+    }
+
+    .navbar {
+        padding: var(--spacing-md);
+    }
+
+    .navbar-title h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .navbar-right {
+        gap: var(--spacing-md);
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .main-content {
+        margin-top: 70px;
+        padding: var(--spacing-md);
+    }
+
+    /* Adjust cards and layout */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: var(--spacing-lg);
+    }
+
+    .stat-value {
+        font-size: var(--font-size-2xl);
+    }
+
+    /* Forms */
+    .login-container {
+        padding: var(--spacing-md);
+    }
+
+    .login-box {
+        padding: var(--spacing-lg);
+    }
+
+    .login-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    /* Tables */
+    .table-container {
+        border-radius: 0;
+    }
+
+    table {
+        font-size: var(--font-size-sm);
+    }
+
+    th, td {
+        padding: var(--spacing-sm);
+    }
+
+    /* Hide columns on very small screens */
+    .hide-on-mobile {
+        display: none;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .control-bar {
+        flex-direction: column;
+    }
+
+    .search-box {
+        min-width: auto;
+    }
+
+    .btn-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Modals */
+    .modal {
+        width: 95%;
+        max-width: none;
+    }
+
+    /* Toast */
+    .toast-container {
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+    }
+
+    .toast {
+        min-width: auto;
+    }
+
+    /* Cards */
+    .card {
+        border-radius: var(--radius-md);
+    }
+
+    /* Demo accounts */
+    .demo-account {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+
+    /* Section heading */
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    /* Pagination */
+    .pagination {
+        gap: var(--spacing-xs);
+    }
+
+    .pagination button,
+    .pagination span {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+
+    /* Modal for forms */
+    .modal {
+        border-radius: 0;
+    }
+
+    .modal-body {
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+    }
+}
+
+/* ============================================
+   Small Mobile (576px and below)
+   ============================================ */
+
+@media (max-width: 576px) {
+    :root {
+        --font-size-base: 0.95rem;
+        --font-size-lg: 1rem;
+        --font-size-xl: 1.125rem;
+        --font-size-2xl: 1.375rem;
+    }
+
+    .navbar {
+        padding: var(--spacing-sm);
+    }
+
+    .navbar-title h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    .navbar-content {
+        gap: var(--spacing-md);
+    }
+
+    .user-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: var(--font-size-base);
+    }
+
+    .main-content {
+        margin-top: 65px;
+        padding: var(--spacing-sm);
+    }
+
+    .login-box {
+        padding: var(--spacing-lg);
+    }
+
+    .login-header h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+
+    .stat-label {
+        font-size: var(--font-size-xs);
+    }
+
+    .stat-value {
+        font-size: var(--font-size-xl);
+    }
+
+    th, td {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+    .modal-body {
+        max-height: calc(100vh - 120px);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .card {
+        padding: var(--spacing-md);
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .badge {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .tabs {
+        gap: var(--spacing-sm);
+        overflow-x: auto;
+    }
+
+    .tab-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .toast {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    /* Adjust demo accounts display */
+    .demo-accounts {
+        display: none;
+    }
+}
+
+/* ============================================
+   Extra Small (480px and below)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .menu-toggle {
+        left: 10px;
+        top: 10px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-title h1 {
+        font-size: var(--font-size-base);
+    }
+
+    .main-content {
+        padding: 8px;
+        margin-top: 60px;
+    }
+
+    .card {
+        border-radius: var(--radius-md);
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hide small text on very small screens */
+    .text-small {
+        display: none;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .pagination {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar,
+    .navbar,
+    .menu-toggle,
+    .btn-logout,
+    .btn-theme,
+    .btn-group,
+    .control-bar {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+}
+
+/* ============================================
+   Landscape Orientation Adjustments
+   ============================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .sidebar-header {
+        padding: var(--spacing-md);
+    }
+
+    .navbar {
+        padding: var(--spacing-md);
+    }
+
+    .main-content {
+        margin-top: 60px;
+        padding: var(--spacing-md);
+    }
+
+    .login-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .demo-accounts {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+}
+
+/* ============================================
+   High DPI Screens (Retina)
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .btn-icon,
+    .user-avatar,
+    .school-logo-small {
+        border-width: 1px;
+    }
+}
+
+/* ============================================
+   Dark Mode Specific Responsive
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
+/* ============================================
+   Accessibility - Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   Accessibility - High Contrast
+   ============================================ */
+
+@media (prefers-contrast: more) {
+    :root {
+        --primary: #0033cc;
+        --text-primary: #000000;
+        --bg-primary: #ffffff;
+    }
+
+    .btn,
+    .card,
+    table {
+        border-width: 2px;
+    }
+}

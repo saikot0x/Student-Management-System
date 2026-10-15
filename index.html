@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Login Screen -->
+        <div id="login-screen" class="login-screen active">
+            <div class="login-hero" aria-hidden="true">
+                <div class="hero-brand"><span>🎓</span> <b id="login-brand">School Management System</b></div>
+                <h2>Run your school, <em>beautifully.</em></h2>
+                <p>Students, attendance, exams, fees and the library in one clean, fast workspace.</p>
+                <ul class="hero-features">
+                    <li>✅ Attendance &amp; reports in seconds</li>
+                    <li>🏆 Automatic grades, GPA &amp; marksheets</li>
+                    <li>💳 Fees, receipts &amp; payment history</li>
+                    <li>🌗 Light &amp; dark mode, mobile friendly</li>
+                </ul>
+            </div>
+            <div class="login-container">
+                <div class="login-box">
+                    <div class="login-header">
+                        <div class="school-logo">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                <path d="M25 5L5 15V35C5 40 25 45 25 45C25 45 45 40 45 35V15L25 5Z" 
+                                      stroke="var(--primary)" stroke-width="2" fill="none"/>
+                                <path d="M15 25L21 31L35 17" stroke="var(--primary)" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h1 id="login-title">School Management System</h1>
+                        <p>Sign in to continue</p>
+                    </div>
+
+                    <form id="login-form" class="login-form">
+                        <div class="form-group">
+                            <label for="email">Email or ID</label>
+                            <input type="text" id="email" name="email" required autocomplete="username" placeholder="Email or ID (e.g. STU-2026043)">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="Enter your password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        <div id="login-error" class="login-error"></div>
+                    </form>
+
+                    <div class="demo-accounts">
+                        <p><strong>Demo Accounts:</strong></p>
+                        <div class="demo-account">
+                            <span>Admin:</span>
+                            <code>admin@school.com / admin123</code>
+                        </div>
+                        <div class="demo-account">
+                            <span>Teacher:</span>
+                            <code>teacher@school.com / teacher123</code>
+                        </div>
+                        <div class="demo-account">
+                            <span>Student:</span>
+                            <code>student@school.com / student123</code>
+                        </div>
+                        <div class="demo-account">
+                            <span>Parent:</span>
+                            <code>parent@school.com / parent123</code>
+                        </div>
+                        <p class="security-note">⚠️ Frontend-only demo authentication. NOT for production use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="main-app" class="main-app hidden">
+            <!-- Sidebar Navigation -->
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-header">
+                    <div class="school-logo-small">
+                        <svg width="35" height="35" viewBox="0 0 50 50" fill="none">
+                            <path d="M25 5L5 15V35C5 40 25 45 25 45C25 45 45 40 45 35V15L25 5Z" 
+                                  stroke="var(--primary)" stroke-width="2" fill="none"/>
+                            <path d="M15 25L21 31L35 17" stroke="var(--primary)" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h2 class="school-name" id="brand-name">SMS</h2>
+                </div>
+
+                <nav id="nav-menu" class="nav-menu">
+                    <!-- Navigation items will be populated by JS -->
+                </nav>
+
+                <div class="sidebar-footer">
+                    <button class="btn-theme" id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark theme">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <circle cx="10" cy="10" r="5"/><circle cx="10" cy="3" r="1.5"/><circle cx="10" cy="17" r="1.5"/>
+                            <circle cx="3" cy="10" r="1.5"/><circle cx="17" cy="10" r="1.5"/>
+                            <circle cx="5.5" cy="5.5" r="1.5"/><circle cx="14.5" cy="14.5" r="1.5"/>
+                        </svg>
+                    </button>
+                    <button class="btn-logout" id="logout-btn">Logout</button>
+                </div>
+            </aside>
+
+            <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Top Navbar -->
+            <header class="navbar">
+                <div class="navbar-content">
+                    <div class="navbar-title">
+                        <h1 id="page-title">Dashboard</h1>
+                    </div>
+                    <div class="navbar-right">
+                        <div class="user-info">
+                            <span id="user-name">Admin</span>
+                            <span class="user-role" id="user-role">Administrator</span>
+                        </div>
+                        <div class="user-avatar">A</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div id="content" class="content-area">
+                    <!-- Content will be loaded here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="modal-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/credentials.js"></script>
+    <script src="js/students.js"></script>
+    <script src="js/teachers.js"></script>
+    <script src="js/academic.js"></script>
+    <script src="js/attendance.js"></script>
+    <script src="js/exams.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/fees.js"></script>
+    <script src="js/library.js"></script>
+    <script src="js/notices.js"></script>
+    <script src="js/assignments.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/users.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
